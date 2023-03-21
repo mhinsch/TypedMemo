@@ -1,0 +1,13 @@
+name = "Cached"
+uuid = "3342a929-eca2-49a0-9b1c-e05d9ff2ae87"
+authors = ["Martin Hinsch"]
+version = "0.0.1-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
