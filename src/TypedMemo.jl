@@ -136,7 +136,7 @@ macro cached(a1, a2 = nothing, a3 = nothing)
         if splat_args 
             Meta.quot(quote
                     get!(
-                        Cached.Closure($newfname, ($(args...),)), 
+                        TypedMemo.Closure($newfname, ($(args...),)), 
                         $(Expr(:$, :cache)), 
                         # args need to be selected and splatted for the *cache lookup only*
                         ($(select...),)...)
@@ -144,7 +144,7 @@ macro cached(a1, a2 = nothing, a3 = nothing)
         else
             Meta.quot(quote
                     get!(
-                        Cached.Closure($newfname, ($(args...),)), 
+                        TypedMemo.Closure($newfname, ($(args...),)), 
                         $(Expr(:$, :cache)), 
                         ($(select...),))
                 end)
