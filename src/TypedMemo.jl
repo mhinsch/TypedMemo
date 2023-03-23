@@ -154,7 +154,7 @@ macro cached(a1, a2 = nothing, a3 = nothing)
         # generate actual function
         $(esc(combinedef(split_fun)))
         
-        @generated function $(esc(fname))($(esc.(args)...))
+        Core.@__doc__ @generated function $(esc(fname))($(esc.(args)...))
             arg_types = Tuple{$(esc.(args)...)}
             ret_type = Core.Compiler.return_type($(esc(newfname)), arg_types)
 
